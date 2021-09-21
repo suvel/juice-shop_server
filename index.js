@@ -1,8 +1,8 @@
 var express = require("express");
+const bodyParser = require("body-parser");
 var { graphqlHTTP } = require("express-graphql");
 var { buildSchema } = require("graphql");
 var { m_schema, m_root } = require("./menu");
-
 
 // Construct a schema, using GraphQL schema language
 var schema = buildSchema(`
@@ -26,10 +26,17 @@ var root = {
   hello: () => {
     return "Hello world!";
   },
-  ...m_root
+  ...m_root,
 };
 
 var app = express();
+
+// parse requests of content-type: application/json
+app.use(bodyParser.json());
+
+// parse requests of content-type: application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(
   "/graphql",
   graphqlHTTP({
