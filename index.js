@@ -28,13 +28,13 @@ var queryType = new GraphQLObjectType({
       description: "List all juices and milkshakes that are sold",
       resolve: menu_resolver.menus,
     },
-    addFruit: {
-      type: menu_typedef,
-      args: fruit_args.addFruit,
-      description:
-        "Add a fruit,on successful insertion respond with added fruit detail",
-      resolve: fruit_resolver.addFruit,
-    },
+    // addFruit: {
+    //   type: menu_typedef,
+    //   args: fruit_args.addFruit,
+    //   description:
+    //     "Add a fruit,on successful insertion respond with added fruit detail",
+    //   resolve: fruit_resolver.addFruit,
+    // },
     fruit: {
       type: fruit_typedef,
       args: fruit_args.fruit,
@@ -47,13 +47,13 @@ var queryType = new GraphQLObjectType({
       description: "Search for fruits by name,min and max price",
       resolve: fruit_resolver.fruits,
     },
-    addMilkshake: {
-      type: menu_typedef,
-      args: milkshake_args.addMilkshake,
-      description:
-        "Add a milkshake, on successful insertion respond with added milkshake detail",
-      resolve: milkshake_resolver.addMilkshake,
-    },
+    // addMilkshake: {
+    //   type: menu_typedef,
+    //   args: milkshake_args.addMilkshake,
+    //   description:
+    //     "Add a milkshake, on successful insertion respond with added milkshake detail",
+    //   resolve: milkshake_resolver.addMilkshake,
+    // },
     milkshake: {
       type: milkshake_typedef,
       args: milkshake_args.milkshake,
@@ -88,4 +88,4 @@ app.use(
   })
 );
 app.listen(process.env.PORT || 4000);
-console.log("Running a GraphQL API server at http://localhost:4000/graphql");
+// console.log("Running a GraphQL API server at http://localhost:4000/graphql");
