@@ -1,9 +1,10 @@
+
 const config = {
-    HOST: "localhost",
-    PORT:"3306",
-    USER: "root",
-    PASSWORD: "root",
-    DB: "juice_shop",
+    HOST: process.env.HOST,
+    PORT:process.env.PORT,
+    USER:process.env.USER,
+    PASSWORD: process.env.PASSWORD,
+    DB: process.env.DB,
 };
 
 module.exports = config;

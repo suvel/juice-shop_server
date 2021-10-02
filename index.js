@@ -2,6 +2,8 @@ var express = require("express");
 const bodyParser = require("body-parser");
 var { graphqlHTTP } = require("express-graphql");
 var { GraphQLObjectType, GraphQLSchema, GraphQLList } = require("graphql");
+const dotenv = require('dotenv');
+dotenv.config();
 var {
   typeDef: menu_typedef,
   args: menu_args,
