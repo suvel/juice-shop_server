@@ -2,7 +2,7 @@ var express = require("express");
 const bodyParser = require("body-parser");
 var { graphqlHTTP } = require("express-graphql");
 var { GraphQLObjectType, GraphQLSchema, GraphQLList } = require("graphql");
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
 var {
   typeDef: menu_typedef,
@@ -31,7 +31,8 @@ var queryType = new GraphQLObjectType({
     addFruit: {
       type: menu_typedef,
       args: fruit_args.addFruit,
-      description: "Add a fruit,on successful insertion respond with added fruit detail",
+      description:
+        "Add a fruit,on successful insertion respond with added fruit detail",
       resolve: fruit_resolver.addFruit,
     },
     fruit: {
@@ -49,7 +50,8 @@ var queryType = new GraphQLObjectType({
     addMilkshake: {
       type: menu_typedef,
       args: milkshake_args.addMilkshake,
-      description: "Add a milkshake, on successful insertion respond with added milkshake detail",
+      description:
+        "Add a milkshake, on successful insertion respond with added milkshake detail",
       resolve: milkshake_resolver.addMilkshake,
     },
     milkshake: {
@@ -85,5 +87,5 @@ app.use(
     graphiql: true,
   })
 );
-app.listen(4000);
+app.listen(process.env.PORT || 4000);
 console.log("Running a GraphQL API server at http://localhost:4000/graphql");
