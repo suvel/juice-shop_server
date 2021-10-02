@@ -1,6 +1,8 @@
 # juice-shop_server
 This is repo where I will logging my learning of graphql-server.
 
+[Link to the server](https://juiceshop-graphql.herokuapp.com/graphql)
+
 ### 1st Iteration 🦠:
 Installing and using was no big deal, but the declaring schema or even finding documents or tutorials that did not have "apollo" was tough to find.
 
