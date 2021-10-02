@@ -84,11 +84,12 @@ var resolver = {
   ) => {
     return new Promise((resolve, reject) => {
       sql.query(
-        `call juice_shop.get_fruits_by_name_price(${
+        `call get_fruits_by_name_price(${
           fName ? `'` + fName + `'` : fName
         },${fMinPrice},${fMaxPrice})`,
         (err, result) => {
           if (err) {
+            console(err)
             reject(err);
           }
           if (result) {

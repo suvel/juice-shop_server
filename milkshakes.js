@@ -73,7 +73,7 @@ var resolver = {
   ) => {
     return new Promise((resolve, reject) => {
       sql.query(
-        `call juice_shop.get_milkshake_by_name_price(${
+        `call get_milkshake_by_name_price(${
           msName ? `'` + msName + `'` : msName
         },${msMinPrice},${msMaxPrice})`,
         (err, result) => {
